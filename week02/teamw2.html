@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Team Assignment Week 2</title>
+</head>
+<body>
+  <input id="input1" type="text"></input>
+  <button onclick="displaySum()">Display</button>
+  <input id="input2" type="text"> </input>
+  <button onclick="calculator('+')">+</button>
+  <button onclick="calculator('-')">-</button>
+  <button onclick="calculator('*')">*</button>
+  <div id="div1"></div>
+
+  <script>
+      function readContents()
+      {
+        var inputContent = document.getElementById("input1").value;
+        document.getElementById("div1").innerHTML = inputContent;
+      }
+
+      function sumNumber(number)
+      {
+        var sum = 0;
+        for (count=1; count <= number;count++)
+        {
+        sum += count;
+        }
+
+        return sum;
+      }
+
+      function displaySum()
+      {
+        var num = document.getElementById("input1").value;
+
+        if (parseInt(num) != NaN)
+        {
+            document.getElementById("div1").innerHTML = sumNumber(num);
+        }
+      }
+
+      sum = (number1, number2) => (number1 * 1) + (number2 * 1);
+    
+      const subtract = function(number1, number2)
+      {
+        return (number1 * 1) - (number2 * 1);
+      }
+
+      function multiply(number1, number2)
+      {
+        return (number1 * 1) * (number2 * 1);
+      }
+
+      function calculator(operation)
+      {
+        var num1 = document.getElementById("input1").value, num2 = document.getElementById("input2").value;
+
+        if (parseInt(num1) != NaN && parseInt(num2) != NaN)
+        {
+          switch(operation)
+          {
+            case "+": document.getElementById("div1").innerHTML = sum(num1, num2);
+             break;
+             case "-": document.getElementById("div1").innerHTML = subtract(num1, num2);
+              break;
+              case "*": document.getElementById("div1").innerHTML = multiply(num1, num2);
+              break;
+          }
+          
+        }
+      }
+
+      
+  </script>
+  
+</body>
+</html>
