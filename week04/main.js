@@ -3,8 +3,11 @@ const quiz = [
     { name: "Wonderwoman", realName: "Dianna Prince" },
     { name: "Batman", realName: "Bruce Wayne" },
     { name: "Ironman", realName:"Tony Stark"},
-    { name: "Spiderman", realName:"Peter Parker"}
-  ];
+    { name: "Spiderman", realName:"Peter Parker"},
+    { name: "Green Lantern", realName:"Hal Jordan"},
+    { name: "Black Panther", realName:"T\'Chala"},
+    { name: "Aquaman", realName:"Arthur Curry"}
+  ]; 
   // View Object
   const view = {
     score: document.querySelector("#score strong"),
@@ -68,12 +71,15 @@ const quiz = [
       const answer = this.question.realName.toUpperCase();
       if (response === answer) {
         view.render(view.result, "Correct!", { class: "correct" });
-        this.score++;
+        //this.score++;
+        this.score += 2;
         view.render(view.score, this.score);
       } else {
         view.render(view.result, `Wrong! The correct answer was ${answer}`, {
           class: "wrong"
         });
+        this.score--;
+        view.render(view.score, this.score);
       }
       view.resetForm();
       this.ask();
