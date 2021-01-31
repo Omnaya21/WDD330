@@ -2,7 +2,7 @@
 const resultMessage = document.querySelector('#resultsMessage');
 let gameSlots = ["", "", "", "", "", "", "", "", ""];
 let gameRunning = true;
-let currentPlayer = "X";
+let currentPlayer = "🦹";
 
 const validateMove = () => {
   const winningConditions = [
@@ -37,7 +37,7 @@ const validateMove = () => {
   }
 
   if (wonGame) {
-    resultMessage.innerHTML = `Player ${currentPlayer === 'X' ? '1' : '2'} has won!`;
+    resultMessage.innerHTML = `Player ${currentPlayer === '🦹' ? 'villan' : 'police'} has won!`;
     gameRunning = false;
     return;
   }
@@ -50,16 +50,16 @@ const validateMove = () => {
     return;
   }
 
-  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  currentPlayer = currentPlayer === "🦹" ? "👮" : "🦹";
 
-  resultMessage.innerHTML = `It's ${currentPlayer === 'X' ? 'Player 1' : 'Player 2'} turn`;
+  resultMessage.innerHTML = `It's ${currentPlayer === '🦹' ? 'villan' : 'police'} turn`;
 }
 
 function resetGame() {
   gameSlots = ["", "", "", "", "", "", "", "", ""];
   gameRunning = true;
-  currentPlayer = "X";
-  resultMessage.innerHTML = `It's Player 1 turn`;
+  currentPlayer = "🦹";
+  resultMessage.innerHTML = `It's the villan's turn`;
   gameSlots.forEach((e, i) => {
     document.querySelector(`#block_${i}`).innerHTML = "";
   });
