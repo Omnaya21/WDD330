@@ -6,19 +6,48 @@ body {
 }
 img {
   max-width: 100%;
+  border-radius: 5px 5px 0 0;
 }
 h1 {
   font-size: 3em;
   color: antiquewhite;
   vertical-align: middle;
 }
+h2 {
+  text-align: center;
+  background-color: bisque;
+  padding: 10px;
+}
+ul {
+  margin: 20px;
+  list-style-type: none;
+}
 .hikes-header {
   text-align: center;
   background-image: url(banner.jpg); 
   height: 10em; 
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 25px 16px;
+}
 
 element.style .hikes-header {
   background-image: url(https://s27363.pcdn.co/wp-content/uploads/2020/06/Best-Day-Hikes-in-the-World.jpg.webp);
