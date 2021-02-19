@@ -43,19 +43,15 @@ export default class Todos {
     then send that along with the key to a SaveTodo() function. Then update the display with the current list of tasks */
   addTodo(text) {
     saveTodo(text, this.key);
-    // update task list on screen
-    //renderTodoList(this.getAllTodos(), this.parentElement);
   }
 
   completeTodo(key) {
     const index = todoList.findIndex(item => item.id === Number(key));
     todoList[index].checked = !todoList[index].checked;
 
-    //renderSingleTodo(todoList[index]);
     writeToLS(this.key, todoList);
     renderSingleTodo(todoList[index]);
     showTasksDisplayed(todoList.length);
-    //renderTodoList(todoList, this.parentElement);
   }
 
   removeTodo(key) {
@@ -75,7 +71,6 @@ export default class Todos {
   filterTodos(filter) {}
 
   addTodoListener() {
-    //const list = qs('ul');
     this.parentElement.addEventListener('click', event => {
       if (event.target.classList.contains('js-tick')) {
         const itemKey = event.target.parentElement.dataset.key;
@@ -157,7 +152,6 @@ function saveTodo(task, key) {
   writeToLS(key, todoList);
   renderSingleTodo(todo);
   showTasksDisplayed(todoList.length);
-  //localStorage.setItem(key, todoList);
 }
 
 
