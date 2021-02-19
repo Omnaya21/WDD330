@@ -11,7 +11,12 @@ export default class Todos {
     this.parentElement = qs('ul');
     this.filter = 'showAll';  //Other choices are showActive, showCompleted
   }
-  
+
+  setFilter(newFilter)
+  {
+    this.filter = newFilter;
+  }
+
   getAllTodos() {
     return this.todoList;
   }
@@ -24,6 +29,7 @@ export default class Todos {
   showTodoList() {
     this.parentElement.innerHTML = '';
     renderTodoList(this.getAllTodos(), this.parentElement);
+    showTasksDisplayed(todoList.length);
   }
 
   // show one todo in the parentElement
@@ -36,7 +42,6 @@ export default class Todos {
   /* Add a method to the Todos class called addTodo. It should grab the input in the html where users enter the text of the task, 
     then send that along with the key to a SaveTodo() function. Then update the display with the current list of tasks */
   addTodo(text) {
-    debugger;
     saveTodo(text, this.key);
     // update task list on screen
     //renderTodoList(this.getAllTodos(), this.parentElement);
@@ -49,6 +54,7 @@ export default class Todos {
     //renderSingleTodo(todoList[index]);
     writeToLS(this.key, todoList);
     renderSingleTodo(todoList[index]);
+    showTasksDisplayed(todoList.length);
     //renderTodoList(todoList, this.parentElement);
   }
 
@@ -63,6 +69,7 @@ export default class Todos {
     this.todoList = todoList;
     writeToLS(this.key, todoList);
     renderSingleTodo(todo);
+    showTasksDisplayed(todoList.length);
   }
 
   filterTodos(filter) {}
@@ -97,30 +104,37 @@ export default class Todos {
     });
   }
 
-  addFilterAllListener()
+  addFilterListener()
   {
-    var showAll = qs('.js-filter-all')
-    var showComplete = qs('.js-filter-completed');
-    var showActive = qs('.js-filter-active');
-    showAll.addEventListener('click', function()
+    const showAll = qs('.js-filter-all')
+    const showCompleted = qs('.js-filter-completed');
+    const showActive = qs('.js-filter-active');
+    showAll.addEventListener('click', eevent =>
     {  
-      if(this.filter !='showAll'){
-        this.filter ='showAll';
-        renderTodoList(this.todoList, this.parentElement);
+      if(this.filter !== 'showAll')
+      {
+        this.setFilter('showAll');
+        renderTodoList(todoList, this.parentElement);
+        showTasksDisplayed(todoList.length);
       }
     });
-    showComplete.addEventListener('click', function()
+    showCompleted.addEventListener('click', event =>
     {  
-      if(this.filter !='showCompleted'){
-        this.filter ='showCompleted';
-        renderTodoList(this.todoList.filter(item => item.checked === true), this.parentElement);
+      event.preventDefault();
+      if(this.filter !== 'showCompleted'){
+        this.setFilter('showCompleted');
+        const filteredList = todoList.filter(item => item.checked === true);
+        renderTodoList(filteredList, this.parentElement);
+        showTasksDisplayed(filteredList.length);
       }
     });
-    showActive.addEventListener('click', function()
+    showActive.addEventListener('click', event =>
     {  
-      if(this.filter !='showActive'){
-        this.filter ='showActive';
-        renderTodoList(this.todoList, this.parentElement);
+      if(this.filter !== 'showActive'){
+        this.setFilter('showActive');
+        const filteredList = todoList.filter(item => item.checked !== true);
+        renderTodoList(filteredList, this.parentElement);
+        showTasksDisplayed(filteredList.length);
       }
     });
   }
@@ -142,6 +156,7 @@ function saveTodo(task, key) {
   todoList.push(todo);
   writeToLS(key, todoList);
   renderSingleTodo(todo);
+  showTasksDisplayed(todoList.length);
   //localStorage.setItem(key, todoList);
 }
 
@@ -199,4 +214,10 @@ function renderSingleTodo(todo) {
   } else {
     list.append(node);
   }
+}
+
+function showTasksDisplayed(taskCount)
+{
+  const shownTasks = qs('.js-shown-tasks');
+  shownTasks.innerHTML = taskCount;
 }

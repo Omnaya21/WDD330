@@ -37,6 +37,7 @@ for (var i = 0; i < links.length; i++) {
   var str = '<a href="' + linkUrl + '">' + linkLabel + '</a>' 
   var listItem = document.createElement("li");
 
+  listItem.setAttribute('class', `list-item`);
   listItem.innerHTML = str
 
   ul.appendChild(listItem);

@@ -8,6 +8,6 @@ window.addEventListener("load", () => {
   todos.showTodoList();
   todos.addTodoListener();
   todos.addFormListener();
-  
+  todos.addFilterListener()
 });
 
