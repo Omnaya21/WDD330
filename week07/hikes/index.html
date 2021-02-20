@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Great Hikes (dynamic DOM example)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <main>
+      <header class="hikes-header" role="banner">        
+        <h1>Great Hikes</h1>      
+      </header>
+      <hr>
+      <ul id="hikes" class="hikeStyles"></ul>
+
+      <section id="comments">
+        <h2>Comments:</h1>
+        <div id="newCommentForm" class="hide">
+          <input id="newCommentInput" type="text">
+          <button id="addCommentBtn">+</button>
+        </div>
+
+        <ul id="commentsList"></ul>
+      </section>
+
+   
+    </main>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
+
