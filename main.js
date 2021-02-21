@@ -26,6 +26,14 @@ const links = [
   {
     label: "Week 6 Challenge One: ToDo",
     url: "week06/todo/index.html"
+  },
+  {
+    label: "Week 7 Team activity: Hikes + comments",
+    url: "week07/hikes/index.html"
+  },
+  {
+    label: "Week 7 Quiz Ninja Exercise",
+    url: "week07/quiz/index.html"
   }
 ]
 
