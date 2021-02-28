@@ -34,7 +34,15 @@ const links = [
   {
     label: "Week 7 Quiz Ninja Exercise",
     url: "week07/quiz/index.html"
-  }
+  },
+  {
+    label: "Week 8 Canvas Demo",
+    url: "week08/anim/index.html"
+  },
+  {
+    label: "Week 8 Team activity: Star Wars API",
+    url: "week08/index.html"
+  },
 ]
 
 var ul = document.querySelector("ul");
