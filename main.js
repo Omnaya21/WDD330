@@ -43,6 +43,10 @@ const links = [
     label: "Week 8 Team activity: Star Wars API",
     url: "week08/index.html"
   },
+  {
+    label: "Week 9 Team activity: Drum Kit",
+    url: "week09/javascript30-drums/index-START.html"
+  }
 ]
 
 var ul = document.querySelector("ul");
