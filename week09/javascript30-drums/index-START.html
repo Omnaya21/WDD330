@@ -64,6 +64,25 @@
     e.target.classList.remove('playing');
   }
 
+  function moveButton(el) {
+    let currentMargin = el.style.marginTop.replace("px", "");
+    currentMargin = parseInt(currentMargin, 10);
+
+    console.log("Current Y: " + currentMargin);
+    if (!currentMargin) {
+      el.style.marginTop = "10px";
+      return;
+    }
+
+    if (currentMargin < 100) {
+      el.style.marginTop = currentMargin + 10 + "px";
+      return;
+    }
+
+    // Stretch 2: Move button back to itsoriginal position
+    el.style.marginTop = "";
+  }
+
   function playSound(e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
@@ -72,6 +91,7 @@
     key.classList.add('playing');
     audio.currentTime = 0;
     audio.play();
+    moveButton(key);
   }
 
   const keys = Array.from(document.querySelectorAll('.key'));

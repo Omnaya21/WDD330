@@ -46,7 +46,11 @@ const links = [
   {
     label: "Week 9 Team activity: Drum Kit",
     url: "week09/javascript30-drums/index-START.html"
-  }
+  },
+  {
+    label: "Week 9 Quiz Ninja Exercise",
+    url: "week09/quizninja/index.html"
+  },
 ]
 
 var ul = document.querySelector("ul");
