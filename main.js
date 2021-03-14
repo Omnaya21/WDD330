@@ -65,27 +65,12 @@ const links = [
   },
 ]
 
-/*
-var ul = document.querySelector("ul");
-
-for (var i = 0; i < links.length; i++) {
-  var linkLabel = links[i].label;
-  var linkUrl = links[i].url;
-  var str = '<a href="' + linkUrl + '">' + linkLabel + '</a>' ;
-  var listItem = document.createElement("li");
-
-  listItem.setAttribute('class', `list-item`);
-  listItem.innerHTML = str
-
-  ul.appendChild(listItem);
-}
-*/
 var cards = document.querySelector(".cards");
 
 for (var i=0; i<links.length; i++) {
   var linkLabel = links[i].label;
   var linkUrl = links[i].url;
-  //var str = '<img src="./images/library.png" alt="" />';
+
   var str = '<div class="card-info">';
   str += '<h2><a href="' + linkUrl + '">' + linkLabel + '</a></h2>' ;
   str += '</div>'
@@ -96,15 +81,4 @@ for (var i=0; i<links.length; i++) {
   console.log(listItem);
 
   cards.appendChild(listItem);
-  /*
-  <div class="card">
-    <img src="./images/library.png" alt="" />
-    <div class="card-info">
-      <h2>Assassins Creed Valhalla</h2>
-      <p>PS5 Version</p>
-      <div class="progress"></div>
-    </div>
-    <h2 class="percentage">40%</h2>
-  </div>
-  */
 }
