@@ -92,7 +92,6 @@ main {
   top: 0;
   overflow: hidden;
   z-index: 2;
-
 }
 
 .user {
@@ -192,6 +191,7 @@ img {
     margin: 2rem;
   }
   .dashboard {
+    width: 20%;
     background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),

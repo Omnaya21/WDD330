@@ -1,17 +1,5 @@
 const links = [
   {
-    label: "Week 10 Team Activity",
-    url: "week10/team10/index.html"
-  },
-  {
-    label: "Week 10 Validation 1",
-    url: "week10/validation/index.html"
-  },
-  {
-    label: "Week 10 Validation 2",
-    url: "week10/validation/index2.html"
-  },
-  {
     label: "Week 1",
     url: "week01/story_editor.html"
   },
@@ -65,46 +53,16 @@ const links = [
   },
 ]
 
-/*
 var ul = document.querySelector("ul");
 
 for (var i = 0; i < links.length; i++) {
   var linkLabel = links[i].label;
-  var linkUrl = links[i].url;
-  var str = '<a href="' + linkUrl + '">' + linkLabel + '</a>' ;
+  var linkUrl = links[i].url
+  var str = '<a href="' + linkUrl + '">' + linkLabel + '</a>' 
   var listItem = document.createElement("li");
 
   listItem.setAttribute('class', `list-item`);
   listItem.innerHTML = str
 
   ul.appendChild(listItem);
-}
-*/
-var cards = document.querySelector(".cards");
-
-for (var i=0; i<links.length; i++) {
-  var linkLabel = links[i].label;
-  var linkUrl = links[i].url;
-  //var str = '<img src="./images/library.png" alt="" />';
-  var str = '<div class="card-info">';
-  str += '<h2><a href="' + linkUrl + '">' + linkLabel + '</a></h2>' ;
-  str += '</div>'
-  var listItem = document.createElement("div");
-
-  listItem.setAttribute('class', 'card');
-  listItem.innerHTML = str;
-  console.log(listItem);
-
-  cards.appendChild(listItem);
-  /*
-  <div class="card">
-    <img src="./images/library.png" alt="" />
-    <div class="card-info">
-      <h2>Assassins Creed Valhalla</h2>
-      <p>PS5 Version</p>
-      <div class="progress"></div>
-    </div>
-    <h2 class="percentage">40%</h2>
-  </div>
-  */
 }
