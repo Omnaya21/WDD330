@@ -183,7 +183,7 @@ img {
   -webkit-text-fill-color: transparent;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 678px) {
   .glass {
     min-height: 80vh;
     width: 60%;
