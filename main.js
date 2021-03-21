@@ -83,7 +83,7 @@ const links = [
   },
   {
     label: "Week 11 Team Activity",
-    url: "week11/team10/index.html",
+    url: "week11/json-server/src/week11.html",
     updated: "2021-03-19"
   }
 ]
