@@ -1,19 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <title>
+      Authentication
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+      .errors {
+        border: 1px solid darkred;
+        background-color: lightcoral;
+        padding: 0.5em;
+      }
+      form input {
+        margin: 0.5em 0;
+        font-size: 1.4em;
+        background-color: antiquewhite;
+        width: 300px;
+      }
+      form button {
+        font-size: 1.2em;
+        padding: 0.4em;
+        background-color: cornflowerblue;
+      }
+      input:invalid {
+        box-shadow: 0 0 5px 1px red;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    <header>
+      <h1 class="text-center">Authentication Example</h1>
+      <nav></nav>
+    </header>
+  -->
+  <main>
+    <section class="glass">
+      <div class="">
+        <div id="errors" class="errors hidden"></div>
+        <form class="login" id="login">
+          <h1>Authentication Example</h1>
+          <div class="form-inputs">
+            <div class="form-input">
+              <label for="email">
+                Email
+              </label>
+              <input placeholder="example@email.com" autocomplete="off" id="email" type="email" value="user1@email.com">
+            </div>
+            <div class="form-input">
+              <label for="password">
+                Password
+              </label>
+              <input id="password" type="password">
+            </div>
+            <div class="forget">
+              <a href="">Forgot password?</a>
+            </div>
+          </div>
+          <footer>
+            <button class="btn-login">Log In</button>
+          </footer>
+        </form>
+      </div>
+    </section>
+  </main>
+    <!--
+    <div id="login">
+      <form>
+        <div>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Username"
+            value="user1@email.com"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <button type="button" class="btn btn-primary center-block">
+          Login
+        </button>
+      </form>
+      <div id="token-display"></div>
+    </div>
+    -->
+    <div id="content" class="hidden">
+      <form name="postForm">
+        <div>
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            placeholder="title"
+            required
+          />
+        </div>
+        <div>
+          <label for="content">Content</label>
+          <input
+            type="text"
+            class="form-control"
+            name="content"
+            placeholder="content"
+            required
+          />
+        </div>
+        <div id="postError"></div>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- change the path below to scss/styles.scss to use SASS -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-  <h1>Hello World</h1>
-
-  <script src="js/index.js"></script>
-</body>
-
+        <input type="submit" id="createSubmit" />
+      </form>
+      <ul id="list"></ul>
+    </div>
+    <script type="module" src="week11.js"></script>
+  </body>
 </html>
