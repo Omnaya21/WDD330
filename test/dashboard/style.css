@@ -5,6 +5,16 @@
   --main-color: #228CDB;
   --accent1-color: #EE8434;
   --accent2-color:#C1292E;
+  --red-color: #dd4848;
+  --yellow-color: #e7f15b;
+  --green-color: #80e273;
+  --orange-color: #e2a448;
+  --orangered-color: orangered;
+  --pink-color: deeppink;
+  --purple-color: rebeccapurple;
+  --status-high-color: --red-color;
+  --status-medium-color: --orange-color;
+  --status-low-color: --yellow-color;
   --old-main-color: #1c9ad4;
   --contrast-color: #FFFFFF;
   --color-dark: #1D2231;
@@ -281,15 +291,15 @@ tr td:last-child {
 }
 
 .status.purple {
-  background: rebeccapurple;
+  background: var(--purple-color);
 }
 
 .status.pink {
-  background: deeppink;
+  background: var(--pink-color);
 }
 
 .status.orange {
-  background: orangered;
+  background: var(--orangered-color);
 }
 
 .table-responsive {
@@ -332,7 +342,7 @@ tr td:last-child {
   color: var(--main-color);
 }
 
-@media only screen and (max-width; 1200px) {
+@media only screen and (max-width: 1200px) {
   .sidebar {
     width: 70px;
   }
