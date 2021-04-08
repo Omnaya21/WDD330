@@ -85,7 +85,13 @@ const links = [
     label: "Week 11 Team Activity",
     url: "week11/json-server/src/week11.html",
     updated: "2021-03-19"
+  },
+  {
+    label: "Week 14 Block 2 Challenge",
+    url: "block2//index.html",
+    updated: "2021-04-08"
   }
+
 ]
 
 links.sort(function(a, b) {
